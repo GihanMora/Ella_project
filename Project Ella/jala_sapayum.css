@@ -1,0 +1,38 @@
+
+ul li{
+display: inline-block;
+text-align:center;
+
+line-height:20px;
+}
+ul li a{
+	color :white;
+	text-decoration:none;
+	
+}
+h1{
+	text-align:center;
+	
+}
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 60px 10px 10px 60px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border:solid red;
+  font-size:15px
+
+}
+body{
+	background-color : #006699;
+	border:solid red;
+
+}
+ul li{
+	padding:80px 1px 0px 1px;
+}
