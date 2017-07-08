@@ -4,14 +4,19 @@
 
 .container{
 	background-color:lightblue;
-	width:10000px;
+	width:100%;
 }
+
 .container1{
 	background-color:lightblue;
 	width:100%;
-	text-align:center;
-	height:70px;
-	line-height:70px;
+	 
+}
+
+.container2{
+	background-color:lightblue;
+	width:100%;
+	text-align:center; 
 }
 table{
 	font-size:18px;
@@ -23,9 +28,15 @@ table{
 
 .Bottm{
 	background-color:orange;
-	height:300px;
+	height:400px;
 	width:100%;
 }
+.Bottmpay{
+	background-color:orange;
+	height:510px;
+	width:1510px;
+}
+
 #main_form{
 	margin-left:50px;
 	display:inline;
@@ -37,6 +48,9 @@ table{
 	display:inline-block;
 	float:right;
 }	
+ul{
+	text-align:center;
+}
 
 ul li a{
 	text-decoration:none;
@@ -46,7 +60,7 @@ ul li a{
 ul li{
 	background-color:green;
 	display:inline-block;
-	width:224px;
+	width:252px;
 	text-align:center;
 	height:40px;
 	line-height:40px;
