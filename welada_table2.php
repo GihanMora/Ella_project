@@ -7,7 +7,7 @@
 <div class='head'>
 logged in as:
 <h2 align='center'>-ඇල්ල ප්‍රාදේශීය සභාව-බලපත්‍ර ගිණුම් තැබීම</h2>
-<h4 align='center'>-ව්‍යාපාර බලපත්‍ර-වාර්තාව</h4>
+<h4 align='center'>-බලපත්‍ර ගාස්තු-වෙළඳ බලපත්‍ර</h4>
 	<nav><ul>
         <li><a href="balapathra_gasthu.php">ප්‍රධාන පිටුව</a></li>
         <li>
@@ -57,11 +57,10 @@ if($link->connect_error){
 }
 $query = "SELECT ankaya,balapathra_ankaya,nama,address,idiri_ge_she,warshika_gasthuwa,
 year,jan,feb,mar,april,may,june,july,aug,sep,oct,nov,december, 
-COALESCE(jan,0) + COALESCE(feb,0) + COALESCE(mar,0) + COALESCE(april,0) + COALESCE(may,0)+ COALESCE(june,0)+ COALESCE(july,0)+ COALESCE(sep,0)+ COALESCE(oct,0)+ COALESCE(nov,0)+ COALESCE(december,0) AS 'Total',idiri_genaa_sheshaya FROM balapathra_wyapara"; 
+COALESCE(jan,0) + COALESCE(feb,0) + COALESCE(mar,0) + COALESCE(april,0) + COALESCE(may,0)+ COALESCE(june,0)+ COALESCE(july,0)+ COALESCE(sep,0)+ COALESCE(oct,0)+ COALESCE(nov,0)+ COALESCE(december,0) AS 'Total',idiri_genaa_sheshaya FROM balapathra_welada"; 
  
 $result = mysqli_query($link,$query);  
- //$result1 = mysqli_query($link,$qq); 
-//$row1 = mysqli_fetch_array($result1);
+ 
 echo "<table id='tables'>"; // start a table tag in the HTML
 $terms=array("අංකය","බලපත්‍ර අංකය","නම "," ලිපිනය","ඉදිරියට ගෙන ආ ශේෂය","වාර්ෂික ගාස්තුව","අවුරුද්ද","ජනවාරි","පෙබරවාරි", "මාර්තු"," අප්‍රේල්"," මැයි","  ජූනි"," ජූලි"," අගෝස්තු"," සැප්තැම්බර්" ,"ඔක්තෝම්බර්" ,"නොවැම්බර් ","දෙසැම්බර්","එකතුව","ඉදිරියට ගෙන ආ ශේෂය");
    
@@ -79,6 +78,9 @@ foreach($terms as $value){
 
 echo"<tr>";
 for($k=0; $k<21; $k++){
+	
+	
+	
 		echo "<td>".$row[$k]."</td>";
 	
 	
@@ -90,7 +92,7 @@ for($k=0; $k<21; $k++){
 
 	
 
-echo "<tr><td align='center' colspan='24'>".'<a href="wyapara_table.php" target="_self"  style="text-decoration:none;" ><input class="expand" type="button" name="regbutton" value="පෙර මෙනුවට"></a>'."</td></tr>";
+echo "<tr><td align='center' colspan='24'>".'<a href="welada_table.php" target="_self"  style="text-decoration:none;" ><input class="expand" type="button" name="regbutton" value="පෙර මෙනුවට"></a>'."</td></tr>";
 
 echo "</table>"; //Close the table in HTML
 

@@ -6,7 +6,7 @@
 	<div class='head'>
 	logged in as:
 	<h2 align='center'>-ඇල්ල ප්‍රාදේශීය සභාව-බලපත්‍ර ගිණුම් තැබීම</h2>
-	<h4 align='center'>-ව්‍යාපාර බලපත්‍ර-වාර්තාව</h4>
+	<h4 align='center'>-කර්මාන්ත බලපත්‍ර-වාර්තාව</h4>
 		<nav><ul>
         <li><a href="balapathra_gasthu.php">ප්‍රධාන පිටුව</a></li>
         <li>
@@ -38,8 +38,7 @@
             </ul>
         </li>
     </ul>
-</nav></div></ul>
-</div>
+</nav></div></div>
 	<div id='calender'>
 	<?php
 	echo "<p align='center' class='y'>" . date("Y") . "</p>";
@@ -56,7 +55,7 @@
 				die("Error:Could not connect.".$link->connect_error());
 			}
 
-			$query = "SELECT ankaya,balapathra_ankaya,nama,address,ekathuwa,masaya,sub_date,sub_time FROM balapathra_wyapara_short"; 
+			$query = "SELECT ankaya,balapathra_ankaya,nama,address,ekathuwa,masaya,sub_date,sub_time FROM balapathra_karmantha_short"; 
 			$result = mysqli_query($link,$query);  
 			echo "<table id='tables'>"; // start a table tag in the HTML
 			echo "<tr class= 'tr'>
@@ -89,7 +88,7 @@
 
 	if(isset($_POST['search'])){
 		$nm=$_POST['sb'];
-		$select="select ankaya,balapathra_ankaya,nama,address,ekathuwa,masaya from balapathra_wyapara_short where nama like'%$nm%'";
+		$select="select ankaya,balapathra_ankaya,nama,address,ekathuwa,masaya from balapathra_karmantha_short where nama like'%$nm%'";
 		$dets = mysqli_query($link,$select);
 		$check=$dets;
 	}
@@ -102,7 +101,7 @@
 	</div>
 	
 	<div id='search'>
-		<form action='wyapara_table.php' method='post'>
+		<form action='karmantha_table.php' method='post'>
 			<h4 align='center'>සොයන්න  Search Here!</h4>
 			<input align='center' class='searchbox' type='text' name='sb' placeholder='name'>
 			<input class='b2' type='submit' name='search' value='සොයන්න' required='true'>
@@ -111,19 +110,19 @@
 		<table align='center'>
 		<tr>
 		<td align='center' colspan='2'>
-		<a href="wyapara_table-2.php" target="_self"  style="text-decoration:none;" >
+		<a href="karmantha_table2.php" target="_self"  style="text-decoration:none;" >
 		<input class="expand" type="button" name="regbutton" value="විස්තාරණය කරන්න.">
 		</a>
 		</td></tr>
 		<tr>
 		<td align='center' colspan='1'>
-		<a href="wyapara_table.php" target="_self"  style="text-decoration:none;" >
+		<a href="karmantha_table.php" target="_self"  style="text-decoration:none;" >
 		<input class="expand" type="button" name="regbutton" value="මුද්‍රණය කරන්න.">
 		</a>
 		</td></tr>
 		<tr>
 		<td align='center' colspan='1'>
-		<a href="balapathra_gasthu-wyapara.php" target="_self"  style="text-decoration:none;" >
+		<a href="balapathra_gasthu-karmantha.php" target="_self"  style="text-decoration:none;" >
 		<input class="expand" type="button" name="regbutton" value="නව ඇතුළත් කිරීමක්.">
 		</a>
 		</td></tr>
