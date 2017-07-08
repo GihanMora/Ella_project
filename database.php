@@ -21,7 +21,7 @@
 	<body>
 		<table align="center">
 			<tr align="center">
-				<td colspan="8"><h2>Details of the payments</h2></td>
+				<td colspan="11"><h2>Details of the payments</h2></td>
 			</tr>
 			<tr>
 				<th>අයපත් අංකය</th>
@@ -30,8 +30,12 @@
 				<th>මාර්ගය</th>
 				<th>වම/දකුණ</th>
 				<th>මාසය</th>
-				<th>කාර්තුව</th>
+				<th>1 කාර්තුව</th>
+				<th>2 කාර්තුව</th>
+				<th>3 කාර්තුව</th>
+				<th>4 කාර්තුව</th>
 				<th>ගාස්තුව</th>
+				<th>වට්ටම්<th>
 			</tr>
 	
 
@@ -49,7 +53,11 @@
 			$payment=$row['payment'];
 			$bill_no=$row['bill_number'];
 			$month=$row['month'];
-			$karthuwa=$row['karthuwa'];
+			$karthuwa1=$row['karthuwa1'];
+			$karthuwa2=$row['karthuwa2'];
+			$karthuwa3=$row['karthuwa3'];
+			$karthuwa4=$row['karthuwa4'];
+			$discountval=$row['discount_val'];
 			$i++;
 		?>	
 		<tr align="center">
@@ -59,8 +67,12 @@
 			<td><?php echo $route; ?></td>
 			<td><?php echo $side;?></td>
 			<td><?php echo $month;  ?></td>
-			<td><?php echo $karthuwa; ?></td>
+			<td><?php echo $karthuwa1; ?></td>
+			<td><?php echo $karthuwa2; ?></td>
+			<td><?php echo $karthuwa3; ?></td>
+			<td><?php echo $karthuwa4; ?></td>
 			<td><?php echo $payment; ?></td>
+			<td><?php echo $discountval; ?></td>
 		</tr>
 		<?php } ?>
 		</table>
