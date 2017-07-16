@@ -2,42 +2,43 @@
 
 <?php 
 	session_start();
-	$con=mysqli_connect("localhost","root","","tiper")or die("connection failed!");
+	$con=mysqli_connect("localhost","root","","waterbowser")or die("connection failed!");
 	$con1=mysqli_connect("localhost","root","","gamaya")or die("connection failed!");
+	
 ?>
 
 	<html>
 		<head>
-			<title> ටිපර් රථය පිලිබඳ තොරතුරු </title>
+			<title> ජල බවුසරය පිලිබඳ තොරතුරු </title>
 			<link rel="stylesheet" href="StylesBackhoeDetails.css"/>
 		</head>
 	
 		<body>
-			<form method="post" action="TiperDetails.php" align="left">
+			<form method="post" action="WaterBowserDetails.php" align="left">
 		<input type="submit" name="back" value="පෙර පිටුව"/>
 		</form>
 		
 		<?php
 		if(isset($_POST['back'])){
-		header("location:TiperSelection.php");
+		header("location:WaterBowserSelection.php");
 		exit;
 		}?>
 			
 		
 		
 		<?php
-		$select="select * from tiper_availability where TNumber='T1'"; 
+		$select="select * from water_bowser_availability where WNumber='W1'"; 
 		$run=mysqli_query($con,$select);
 		$raw=mysqli_fetch_array($run);
 		$availability=$raw['Availability'];
 		if ($availability==1){
 		?>	
 		
-		<h2 align=center>ටිපර් රථය කුලියට දීමට ඇත.</h2>
-		<h2 align=center> ටිපර් රථය ලබා ගැනීම සදහා විස්තර  ඇතුලත් කිරීම  </h2>
+		<h2 align=center>ජල බවුසරය රථය කුලියට දීමට ඇත.</h2>
+		<h2 align=center> ජල බවුසරය ලබා ගැනීම සදහා විස්තර  ඇතුලත් කිරීම  </h2>
 		
 
-	<form method ="post" action ="TiperDetails.php"></br>
+	<form method ="post" action ="WaterBowserDetails.php"></br>
 		<div id="tableContainer-1">
 		<div id="tableContainer-2">
 		<table align="center"  height="400px" width="450px" id="myTable" >
@@ -108,8 +109,9 @@
 		$nod=$_POST['nod'];
 		$amount=$_POST['amount'];
 		$fine=$_POST['fine'];
+		
 		$description="".$name."  ".$id." ".$address;
-		$section="ටිපර් රථය අත්තිකාරම් මුදල් ගෙවීම";
+		$section="ජල බවුසරය අත්තිකාරම් මුදල් ගෙවීම";
 		
 		// TO CHECK WHETHER ALL THE DATA IS ENTERED.
 		
@@ -144,13 +146,13 @@
 		//INSERT DATA.
 		$true=1;
 		$false=0;
-		$insert1="insert into tiper_owners(Name,ID,Address,TP,DoP,DoS,Advance,Total,PayDate,Remainder,AdvancePaid) values('$name','$id','$address','$telephone','$dop','$dos','$advance','$total','$dop','$remainder','$true')";
-		$insert2="update tiper_availability set Availability=$false where TNumber='T1'";
+		$insert1="insert into water_bowser_owners(Name,ID,Address,TP,DoP,DoS,Advance,Total,PayDate,Remainder,AdvancePaid) values('$name','$id','$address','$telephone','$dop','$dos','$advance','$total','$dop','$remainder','$true')";
+		$insert2="update tiper_availability set Availability=$false where WNumber='W1'";
 		$insert3="insert into gamaya prasa_two(vistharaya,geweema,Approved,wargaya) values ('$description','$advance','false',$section) ";
 		$run=mysqli_query($con,$insert1);
 		$run2=mysqli_query($con,$insert2);
 		$run3=mysqli_query($con1,$insert3);
-		if($run && $run2 && $run3){
+		if($run){
 			echo "<script type='text/javascript'> alert (' සාර්ථකව දත්ත අතුලත් කරන ලදී ');</script>";
 			
 		} else{
@@ -162,7 +164,7 @@
 		}else{
 			
 			//DISPLAY THE DETAILS OF THE LAST PERSON WHO HIRED THE VEHICLE
-			$select1="select * from tiper_owners order by No desc limit 1";
+			$select1="select * from water_bowser_owners order by No desc limit 1";
 			$run1=mysqli_query($con,$select1);
 			$row1=mysqli_fetch_array($run1);
 			$name =$row1['Name'];
@@ -172,7 +174,7 @@
 			$dos=$row1['DoS'];
 			$remainder=$row1['Remainder'];
 			
-			echo '<h2 align=center> ටිපර් රථය කුලියට දීමට නොමැත</h2><br/><p align="center">අවසානයට කුලියට ගත් පුද්ගල තොරතුරු</p>';
+			echo '<h2 align=center> ජල බවුසරය කුලියට දීමට නොමැත</h2><br/><p align="center">අවසානයට කුලියට ගත් පුද්ගල තොරතුරු</p>';
 			echo '<div id="tableContainer-1">
 					<div id="tableContainer-2">
 			
@@ -201,11 +203,11 @@
 			<td align="right"> නැවත භාර දෙන දිනය  :</td>
 			<td> '.$dos.'</td></br>
 			</tr>
-			
 			<tr>
 			<td align="right"> හිඟ මුදල :</td>
 			<td> '.$remainder.'</td></br>
 			</tr>
+			
 			
 			</table>';
 			

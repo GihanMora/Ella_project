@@ -1,0 +1,36 @@
+
+h1{
+	text-align:center;
+}
+h2{
+	text-align:center;
+}
+
+ body {
+	background-color:#B4FFFF;
+	color:black;
+}
+    
+    #myTable1 {
+    margin: 0 auto;
+	background-color:rgba(80,10,10,0.3);
+	margin-top:75px;
+	color: #7D0552;  
+  }
+
+ .buto{
+	 margin-top:250px;
+	 margin-left:1200px;
+ } 
+ 
+ .but1{
+	 height:60px;
+	 width:150px;
+ }
+ 
+ .dinaya{
+	margin-top: 200px;
+	width: 500px;
+	position:relative;
+	left:1000px;
+}

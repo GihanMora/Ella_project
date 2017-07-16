@@ -1,0 +1,65 @@
+body{
+	background-color:#B4FFFF;
+
+}
+h1{
+	text-align:center;
+	color:black;
+}
+
+h2{
+	text-align:center;
+	color:8;
+}
+
+
+h3{
+	text-align:center;
+	color:#black;
+}
+
+p{
+	text-align:center;
+	color:#black;
+}
+
+title{
+	color:#black;	
+}
+
+td{
+	color:#black;	
+}
+
+  #tableContainer-1 {
+    height: 100%;
+    width: 100%;
+    display: table;
+  }
+  #tableContainer-2 {
+    vertical-align: middle;
+    display: table-cell;
+    height: 100%;
+  }
+  #myTable {
+    margin: 0 auto;
+	background-color: rgba(80,10,10,0.3);
+  }
+  
+ #boxx{
+	 padding : 10px;
+	 
+	 background-color:rgba(80,10,10,0.3);
+	 border:black 5px;
+	 width:600px
+	 align:center;
+	 
+ }
+ 
+ 
+  .head{
+	width:100%;
+	height:200px;
+	background-color:#004B4B;
+	
+}

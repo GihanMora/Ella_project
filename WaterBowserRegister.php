@@ -2,7 +2,7 @@
 
 <?php 
 session_start();
-$con1=mysqli_connect("localhost","root","","tiper")or die("connection failed!");	
+$con1=mysqli_connect("localhost","root","","waterbowser")or die("connection failed!");	
 	
 ?>
 
@@ -16,7 +16,7 @@ $con1=mysqli_connect("localhost","root","","tiper")or die("connection failed!");
 
 	<h1>නව සාමාජිකයකු අතුලත් කිරීම සදහා පහත විස්තර සම්පූර්ණ කරන්න</h1>
 
-	<form method ="post" action ="TiperRegister.php"></br>
+	<form method ="post" action ="WaterBowserRegister.php"></br>
 		<table align="center" bgcolor="grey" height="300px" width="400px">
 			<tr>
 				<td>  සම්පූර්ණ නම :  </td>
@@ -49,11 +49,12 @@ if(isset($_POST['sub'])){
 	$telephone=$_POST['Telephone'];
 	
 	
-	$insert1="insert into tiper_users(Name,ID,Address,TP) values('$name','$id','$adress','$telephone')";
-	///echo $con1;
-	
+	$insert1="insert into waterbowser_users(Name,ID,Address,TP) values('$name','$id','$adress','$telephone')";
 	$run=mysqli_query($con1,$insert1);
-	echo mysqli_error($con1);
+	
+	if(mysqli_errno($con1)==1062){
+		echo "<script type='text/javascript'> alert ('මෙම හැදුනුම්පත් අංකයට අදාළව පෙර ලියපදිංචි වී ඇත.');</script>";
+	}
 	
 	
 	if($run){
@@ -66,5 +67,5 @@ if(isset($_POST['sub'])){
 	mysqli_close($con1);
 }
 ?>
-<a href = "TiperDetails.php"> Next </a>
+<a href = "WaterBowserDetails.php"> Next </a>
 </html>
